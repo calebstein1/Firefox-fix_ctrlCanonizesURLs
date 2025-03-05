@@ -7,6 +7,12 @@ This patch reverts the shortcut back to Ctrl+Enter, keeping it consistent across
 
 Also includes ffdl, a small script for downloading and extracting Firefox source tarballs.
 
+## Dependencies
+
+The patch is just a patch, but ffdl has a few dependencies.
+You'll need to make sure each of `LWP::Simple`, `Archive::Tar::Wrapper`, and `File::Copy::Recursive` are installed.
+If you don't want to use the script, you can download your own sources and patch.
+
 ## Usage
 
 To do a complete patched build, run the following commands:
