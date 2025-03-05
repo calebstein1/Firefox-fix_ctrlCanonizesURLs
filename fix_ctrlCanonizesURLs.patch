@@ -1,0 +1,13 @@
+diff --git a/browser/components/urlbar/UrlbarInput.sys.mjs b/browser/components/urlbar/UrlbarInput.sys.mjs
+index e7a2e772079e6..474e05f0ae202 100644
+--- a/browser/components/urlbar/UrlbarInput.sys.mjs
++++ b/browser/components/urlbar/UrlbarInput.sys.mjs
+@@ -3020,7 +3020,7 @@ export class UrlbarInput {
+     return (
+       KeyboardEvent.isInstance(event) &&
+       event.keyCode == KeyEvent.DOM_VK_RETURN &&
+-      (AppConstants.platform == "macosx" ? event.metaKey : event.ctrlKey) &&
++      event.ctrlKey &&
+       !event._disableCanonization &&
+       lazy.UrlbarPrefs.get("ctrlCanonizesURLs")
+     );
