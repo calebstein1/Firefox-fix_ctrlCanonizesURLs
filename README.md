@@ -13,7 +13,7 @@ To do a complete patched build, run the following commands:
 
 ```Bash
 git clone https://github.com/calebstein1/Firefox-fix_ctrlCanonizesURLs
-./ffdl <version>
+./ffdl.pl <version>
 cd firefox-<version>
 patch -p1 <../fix_ctrlCanonizesURLs.patch
 ./mach build
