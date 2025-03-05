@@ -5,9 +5,7 @@ use warnings;
 
 use LWP::Simple;
 use Archive::Tar::Wrapper;
-use File::Path;
 use File::Copy::Recursive qw(dircopy);
-use Cwd;
 
 my $ver = $ARGV[0];
 if (!defined $ver || $ver !~ /^[0-9]{1,3}\.[0-9]{1,2}(b[0-9]{1,2})?$/) {
@@ -29,6 +27,6 @@ my $tar = Archive::Tar::Wrapper->new();
 $tar->read($filename) or die "Failed to extract $filename\n";
 my $tardir = $tar->tardir();
 dircopy($tardir, './');
-print "\nExtracted $filename!\nCleaning downloaded files...\n";
+print "Done!\nCleaning downloaded files...\n";
 unlink $filename or warn "Failed to clean files\n";
 
